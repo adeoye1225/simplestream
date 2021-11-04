@@ -36,7 +36,11 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
-        //
+        $channel = Channel::all();
+        return response()->json([
+            "channels"=>$channel,
+                
+        ],200);
     }
 
     /**

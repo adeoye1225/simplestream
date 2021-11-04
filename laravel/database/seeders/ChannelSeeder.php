@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Channel;
 use Illuminate\Database\Seeder;
 
 class ChannelSeeder extends Seeder
@@ -13,6 +14,6 @@ class ChannelSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Channel::factory()->times(10)->create();
     }
 }

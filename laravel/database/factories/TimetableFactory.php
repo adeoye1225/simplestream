@@ -14,7 +14,10 @@ class TimetableFactory extends Factory
     public function definition()
     {
         return [
-            //
+            //'duration'=> $this->faker->in,
+            'name'=>$this->faker->name,
+            'start_time'= $this->faker->dateTime();
+            'end_time ' = $this->faker->dateTime('')
         ];
     }
 }

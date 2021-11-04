@@ -14,7 +14,11 @@ class ChannelFactory extends Factory
     public function definition()
     {
         return [
-            //
+                //
+                //'uuid'=> $this->faker->uniqid,
+                'image'=> $this->faker->url(150),
+                'name'=>$this->faker->name,
+        
         ];
     }
 }
