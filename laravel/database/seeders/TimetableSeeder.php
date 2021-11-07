@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Timetable;
 use Illuminate\Database\Seeder;
 
 class TimetableSeeder extends Seeder
@@ -13,6 +14,6 @@ class TimetableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Timetable::factory()->times(50)->create();
     }
 }

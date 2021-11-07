@@ -15,7 +15,7 @@ class ChannelFactory extends Factory
     {
         return [
                 //
-                //'uuid'=> $this->faker->uniqid,
+                'uuid'=> $this->faker->uuid(),
                 'image'=> $this->faker->url(150),
                 'name'=>$this->faker->name,
         

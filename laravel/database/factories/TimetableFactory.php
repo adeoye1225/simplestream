@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Channel;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TimetableFactory extends Factory
@@ -13,11 +15,24 @@ class TimetableFactory extends Factory
      */
     public function definition()
     {
+        $channels = Channel::pluck('id')->toArray();
+        $start =$this->faker->dateTimeBetween('now', 'now +7 days'); 
+        $end = $this->faker->dateTimeBetween($start, $start->format('Y-m-d H:i:s').' +1 day');
+        $start_time = Carbon::parse($start);
+        $end_time = Carbon::parse($end);
+        $duration = $end_time->diffInSeconds($start_time);
+        //dd($duration);
+        //$seconds = $duration->s;
         return [
-            //'duration'=> $this->faker->in,
+            'channel_id'=> $this->faker->randomElement($channels),
             'name'=>$this->faker->name,
-            'start_time'= $this->faker->dateTime();
-            'end_time ' = $this->faker->dateTime('')
+             'uuid'=>$this->faker->uuid(),   
+            'start_time'=> $start,
+            'end_time' => $end,
+            'duration' => $duration
+
+            
+           
         ];
     }
 }
