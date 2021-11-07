@@ -26,7 +26,7 @@ class TimetableFactory extends Factory
         return [
             'channel_id'=> $this->faker->randomElement($channels),
             'name'=>$this->faker->name,
-             'uuid'=>$this->faker->uuid(),   
+            'uuid'=>$this->faker->uuid(),   
             'start_time'=> $start,
             'end_time' => $end,
             'duration' => $duration
